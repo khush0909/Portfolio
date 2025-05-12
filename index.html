@@ -1,0 +1,610 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khush Sahu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="#home" class="logo">Khush Sahu<span class="text-accent">.</span></a>
+                <nav class="nav-links">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+<!--                     <a href="#experience" class="nav-link">Experience</a> -->
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#certifications" class="nav-link">Certifications</a>
+                    <a href="#achievements" class="nav-link">Achievements</a>
+                    
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path>
+                        </svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"></path>
+                        </svg>
+                    </button>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav">
+                <a href="#home" class="mobile-nav-link active">Home</a>
+                <a href="#about" class="mobile-nav-link">About</a>
+                <a href="#projects" class="mobile-nav-link">Projects</a>
+                <!-- <a href="#experience" class="mobile-nav-link">Experience</a> -->
+                <a href="#skills" class="mobile-nav-link">Skills</a>
+                <a href="#certifications" class="mobile-nav-link">Certifications</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="bgCanvas" class="background-canvas"></canvas>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="gradient-text">Khush Sahu</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        <span class="font-medium">Data Analyst</span> 
+                    </h2>
+                    <p class="hero-description">
+                        I build exceptional digital experiences with modern technologies. Passionate about creating elegant solutions to complex problems.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            View My Work
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">Contact</a>
+                        <a href="pdf/Khush_NEW.pdf" target="_blank" class="btn btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path>
+                            </svg>
+                            Download Resume
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/khush0909" target="_blank" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="social-icon">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/khush-sahu-9489a624a/" target="_blank" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="social-icon">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                            </svg>
+                        </a>
+                        <a href="mailto:sahukhush2005@gmail.com" target="_blank" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                        <a href="https://leetcode.com/u/nMBRSBkTEf/" target="_blank" class="social-link">
+                            <img src="icon/leetcode.svg" alt="LeetCode" class="social-icon">
+                        </a>
+
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-container">
+                        <div class="profile-image-wrapper">
+                            <img src="images/Screenshot__36_-removebg-preview.png" alt="Khush Sahu" class="profile-image">
+                        </div>
+                        <div class="profile-title">Data Analyst</div>
+                    </div>
+                    <div class="decoration-circle decoration-circle-1"></div>
+                    <div class="decoration-circle decoration-circle-2"></div>
+                    <div class="decoration-circle decoration-circle-3"></div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="scroll-mouse">
+                <div class="scroll-dot"></div>
+            </div>
+        </div> -->
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About <span class="text-accent">Me</span></h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Get to know more about me, my background, and what drives me.</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image-container">
+                    <div class="about-image-wrapper">
+                        <div class="about-profile-container">
+                            <div class="about-profile-image-wrapper">
+                                <img src="images/Screenshot__36_-removebg-preview.png" alt="Khush Sahu" class="about-profile-image">
+                            </div>
+                            <h3 class="about-profile-name">Khush Sahu</h3>
+                            <p class="about-profile-title">Data Analyst</p>
+                        </div>
+                        <div class="decoration-circle about-decoration-1"></div>
+                        <div class="decoration-circle about-decoration-2"></div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3 class="about-heading">Data Analyst</h3>
+                    <p class="about-paragraph">
+                        Hey, I'm Khush Sahu —  a Computer Science student with a passion for Data Science and a strong foundation in programming, analytics, and problem-solving. With hands-on experience in Python, R, SQL, and machine learning, I am focused on leveraging technology to solve real-world problems. 
+                        </p>
+                        <p class="about-paragraph">
+                            Always eager to learn and grow, I am pursuing opportunities to enhance my skills in data-driven decision making and software development.
+                            I love turning ideas into real-world solutions, and I see every line of code as part of a story. Open to internships, collaborations, and challenges that inspire growth. Let’s build something awesome!
+                    </p>
+                    <p class="about-paragraph">
+                        
+                    </p>
+
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <h4 class="stat-value">5+</h4>
+                            <p class="stat-label">Projects Completed</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <h4 class="stat-value">10+</h4>
+                            <p class="stat-label">Technologies</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                            </div>
+                            <h4 class="stat-value">5+</h4>
+                            <p class="stat-label">Achievements</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My <span class="text-accent">Projects</span></h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Here are some of the projects I've worked on. Each project represents a unique challenge and solution.</p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/Screenshot 2025-04-26 103913.png"  alt="E-Commerce Platform" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Tableau Dashboard for Sales Performance</h3>
+                        <p class="project-description">Created an interactive Tableau dashboard to visualize sales performance across different regions and product categories.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Tableau</span>
+                            <span class="project-tag">Excel</span>
+                            <span class="project-tag">Data Analysis</span>
+                            <!-- <span class="project-tag">Express</span> -->
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/bhavessh/Clone-Limlondon" target="_blank" class="project-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="project-icon">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                                </svg>
+                                View Project
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/proj_2.jpg" alt="Task Management App" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Data Analysis Diwali Sales</h3>
+                        <p class="project-description">Performed exploratory data analysis on Diwali sales data using Python to improve the customer experience.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Pandas</span>
+                            <span class="project-tag">MatplotLib & Seaborn</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/khush0909/Data_Analysis_Diwali_Sales" target="_blank" class="project-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="project-icon">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                                </svg>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/images.jpeg" alt="Task Management App" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Flight Fare Data Analysis</h3>
+                        <p class="project-description">Performed exploratory data analysis to identify patterns and trends to optimize travel costs for better financial planning .</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Pandas</span>
+                            <span class="project-tag">MatplotLib & Seaborn</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/khush0909/Flight_Fare_Data_Analysis" target="_blank" class="project-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="project-icon">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                                </svg>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/proj_3.jpg" alt="Task Management App" class="project-image">
+                        </div> <!-- End of project-image-container -->
+                    <div class="project-content">
+                        <h3 class="project-title">Power BI Sales Dashboard</h3>
+                        <p class="project-description">Designed a Power BI dashboard for Madhav Store to track and analyze online sales data across India.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">EDA</span>
+                            <span class="project-tag">Excel</span>
+                            <!-- <span class="project-tag"></span>
+                            <span class="project-tag">JavaScript</span> -->
+                            </div> 
+                            <div class="project-links">
+                                <a href="https://github.com/bhavessh/" target="_blank" class="project-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="project-icon">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                                    </svg>
+                                    View Project
+                                </a>
+                            </div>
+                    <!-- End of project-links -->
+                    </div> <!-- End of project-content -->
+                <!-- </div> End of project-card -->
+                <!-- <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="images/proj_4.jpg" alt="Project Image Description" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Customer Segmentation</h3>
+                        <p class="project-description">Developed a ML model to give various recommendations of financial products & services on target customer groups.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Jupyter</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Data Analysis</span>
+                            <span class="project-tag">ML</span>
+                            
+                        </div> -->
+                        <div class="project-links">
+                            <a href="https://github.com/rishabhnmishra/customer_segmentation/blob/main/Customer_Segmentation-final.ipynb" target="_blank" class="project-link">
+                                <!-- GitHub icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="project-icon">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                                </svg>
+                                View Project
+                            </a>
+                            <!-- Optional Live Demo link -->
+                            <!-- <a href="https://your-live-demo-link.com" target="_blank" class="project-link project-link-demo"></a> -->
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My <span class="text-accent">Skills</span></h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Here are the technologies and tools I work with to bring ideas to life.</p>
+            </div>
+            <div class="skills-tabs">
+                <button class="skills-tab active" data-category="Languages">Languages</button>
+                <button class="skills-tab" data-category="Tools">Tools</button>
+              </div>
+            <div id="skillsCarousel">
+                <div class="skills-track"></div>
+              </div>
+            </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My <span class="text-accent">Certifications</span></h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Here are some certifications I've earned, showcasing my commitment to continuous learning and growth.</p>
+            </div>
+    
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="certificar/Screenshot 2025-04-30 051712.png" alt="Certification 1" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Advanced Distribution Systems</h3>
+                        
+                        <div class="project-links">
+                            <a href="pdf/Advanced Distributed Systems.pdf" target="_blank" class="project-link">
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="certificar/Screenshot 2025-04-30 052232.png" alt="Certification 2" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">SQL
+                        </h3>
+                        
+                        <div class="project-links">
+                            <a href="pdf/SQL Certificate.pdf" target="_blank" class="project-link">
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Add more certification cards as needed -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="certificar/Screenshot 2025-04-30 051048.png" alt="Certification 3" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Data Analytics With Python</h3>
+                        <div class="project-links">
+                            <a href="pdf/Khush Sahu (1).pdf" target="_blank" class="project-link">
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="certificar/Screenshot 2025-04-30 050909.png" alt="Certification 3" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Fundamentals in Kotlin</h3>
+                        <div class="project-links">
+                            <a href="pdf/Coursera 1TWGZ43QIPI5.pdf" target="_blank" class="project-link">
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    <!-- </div> End of contact-text -->
+            </div>
+        </div>
+    </section>
+    <section id="achievements" class="achievements">
+        <div class="container achievements-container">
+          <h2 class="section-title">Achievements</h2>
+          <div class="achievement-cards">
+            <div class="achievement-card">
+              <h3>150+ Problems Solved</h3>
+              <p>LeetCode & HackerRank combined</p>
+            </div>
+            <div class="achievement-card">
+              <h3>Fin-A-Thon</h3>
+              <p>Secured second prize in it.</p>
+            </div>
+            <div class="achievement-card">
+              <h3>SIH</h3>
+              <p>Participated in a hackathon.</p>
+            </div>
+            <div class="achievement-card">
+              <h3>GPT-powered Chatbot</h3>
+              <p>Got good responses on that.
+
+              </p>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+      
+      
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In <span class="text-accent">Touch</span></h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Have a project in mind or want to discuss potential opportunities? Feel free to reach out!</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 class="contact-heading">Contact Information</h3>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:sahukhush2005@gmail.com">sahukhush2005@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <a href="tel:+919876543210">+91 73866 28935</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <a href="https://maps.google.com/?q=Jaipur,India" target="_blank">Ahmedabad, Gujarat, India</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-connect">
+                        <h4>Connect With Me</h4>
+                        <p>Follow me on social media to stay updated with my latest projects and activities.</p>
+                        <div class="social-icons">
+                            <a href="https://github.com/khush0909" target="_blank" class="social-icon-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/khush-sahu-9489a624a" target="_blank" class="social-icon-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                                </svg>
+                            </a>
+                            <!-- <a href="https://x,com/bhavessh_in/" target="_blank" class="social-icon-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                                </svg>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <div class="contact-form-card">
+                        <h3 class="contact-form-title">Send Me a Message</h3>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="How can I help you?" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="send-icon">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                                Send Message
+                            </button>
+                        </form>
+                        <div id="formSuccess" class="form-success">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="success-icon">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <h4>Message Sent Successfully!</h4>
+                            <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home" class="footer-logo-link">Khush<span class="text-accent">.</span></a>
+                    <p class="footer-tagline">Building digital experiences with passion and precision.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <!-- <a href="#experience" class="footer-link">Experience</a> -->
+                    <a href="#skills" class="footer-link">Skills</a>
+                    <a href="#certifications" class="footer-link">Certifications</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; <span id="currentYear"></span> Khush Sahu. All rights reserved.</p>
+                <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
